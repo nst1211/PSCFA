@@ -7,3 +7,6 @@ In this paper, we propose PSCFA, a prototypical supervised contrastive learning 
 (3)The feature augmentation strategy for tail labels can effectively improve classification performance of the model on classes with limited instances.  
 (4)Our experimental results conclusively show that PSCFA consistently outperforms current leading methods when evaluated on MFTP datasets, underscoring its efficacy and superiority in the domain of computational peptide analysis.  
 
+The framework of the PSCFA method for MFTP prediction is described as follows:  
+![Example Image](images/example.png "Example Image")
+
