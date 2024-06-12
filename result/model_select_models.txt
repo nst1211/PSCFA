@@ -1,0 +1,60 @@
+2024-06-13 01:24:21
+TextCNN(
+  (extractor): textCNN(
+    (embedding): Embedding(21, 256)
+    (convs): ModuleList(
+      (0): Conv1d(256, 126, kernel_size=(3,), stride=(1,), padding=same)
+      (1): Conv1d(256, 126, kernel_size=(4,), stride=(1,), padding=same)
+      (2): Conv1d(256, 126, kernel_size=(5,), stride=(1,), padding=same)
+      (3): Conv1d(256, 126, kernel_size=(6,), stride=(1,), padding=same)
+    )
+    (dropout): Dropout(p=0.6, inplace=False)
+    (Mish): Mish()
+  )
+  (clf): Classifier(
+    (fc): Sequential(
+      (0): Flatten(start_dim=1, end_dim=-1)
+      (1): Dropout(p=0.6, inplace=False)
+      (2): Linear(in_features=5040, out_features=2560, bias=True)
+      (3): Mish()
+      (4): Dropout(p=0.5, inplace=False)
+      (5): Linear(in_features=2560, out_features=512, bias=True)
+      (6): Mish()
+      (7): Dropout(p=0.5, inplace=False)
+      (8): Linear(in_features=512, out_features=256, bias=True)
+      (9): Mish()
+      (10): Linear(in_features=256, out_features=21, bias=True)
+    )
+  )
+)
+
+2024-06-13 01:24:34
+TextCNN(
+  (extractor): textCNN(
+    (embedding): Embedding(21, 256)
+    (convs): ModuleList(
+      (0): Conv1d(256, 126, kernel_size=(3,), stride=(1,), padding=same)
+      (1): Conv1d(256, 126, kernel_size=(4,), stride=(1,), padding=same)
+      (2): Conv1d(256, 126, kernel_size=(5,), stride=(1,), padding=same)
+      (3): Conv1d(256, 126, kernel_size=(6,), stride=(1,), padding=same)
+    )
+    (dropout): Dropout(p=0.6, inplace=False)
+    (Mish): Mish()
+  )
+  (clf): Classifier(
+    (fc): Sequential(
+      (0): Flatten(start_dim=1, end_dim=-1)
+      (1): Dropout(p=0.6, inplace=False)
+      (2): Linear(in_features=5040, out_features=2560, bias=True)
+      (3): Mish()
+      (4): Dropout(p=0.5, inplace=False)
+      (5): Linear(in_features=2560, out_features=512, bias=True)
+      (6): Mish()
+      (7): Dropout(p=0.5, inplace=False)
+      (8): Linear(in_features=512, out_features=256, bias=True)
+      (9): Mish()
+      (10): Linear(in_features=256, out_features=21, bias=True)
+    )
+  )
+)
+
