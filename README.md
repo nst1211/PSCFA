@@ -8,5 +8,5 @@ In this paper, we propose PSCFA, a prototypical supervised contrastive learning 
 (4)Our experimental results conclusively show that PSCFA consistently outperforms current leading methods when evaluated on MFTP datasets, underscoring its efficacy and superiority in the domain of computational peptide analysis.  
 
 The framework of the PSCFA method for MFTP prediction is described as follows:  
-![Example Image](images/example.png "Example Image")
+![The framework of the PSCFA model](images/The framework of the PSCFA model.png "The framework of the PSCFA model")
 
