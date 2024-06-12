@@ -22,4 +22,5 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 | `saved_models`        | models preserved during training.                          |
 | `train_test`        | the main file of PSCFA predictor                         |
 #  Training and test PSCFA model  
-''' pep_main.py'''
+```bash
+python pep_main.py
