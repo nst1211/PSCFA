@@ -10,3 +10,4 @@ In this paper, we propose PSCFA, a prototypical supervised contrastive learning 
 The framework of the PSCFA method for MFTP prediction is described as follows:  
 ![The framework of the PSCFA model](images/The framework of the PSCFA model.png "The framework of the PSCFA model")
 
+![The framework of the PSCFA model](images/The%20framework%20of%20the%20PSCFA%20model.png "The framework of the PSCFA model")
