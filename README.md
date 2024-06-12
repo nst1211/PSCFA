@@ -8,6 +8,15 @@ In this paper, we propose PSCFA, a prototypical supervised contrastive learning 
 (4)Our experimental results conclusively show that PSCFA consistently outperforms current leading methods when evaluated on MFTP datasets, underscoring its efficacy and superiority in the domain of computational peptide analysis.  
 
 The framework of the PSCFA method for MFTP prediction is described as follows:  
-![The framework of the PSCFA model](images/The framework of the PSCFA model.png "The framework of the PSCFA model")
-
 ![The framework of the PSCFA model](images/The%20framework%20of%20the%20PSCFA%20model.png "The framework of the PSCFA model")
+#  Related Files  
+#   PSCFA  
+| FILE NAME       | DESCRIPTION                                                            |
+|-----------------|------------------------------------------------------------------------|
+| `pep_main.py`       | the main file of ETFC predictor  |
+| `train.py`      | train model                                                            |
+| `models.py`      | model construction                                                     |
+| `evaluation.py` | evaluation metrics (for evaluating prediction results)                 |
+| `dataset`       | data                                                                   |
+| `result`        | results preserved during training.                          |
+| `saved_models`        | modelspreserved during training.                          |
