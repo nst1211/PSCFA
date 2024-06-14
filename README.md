@@ -25,7 +25,7 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 
 - **Requirements**
 
-Operating System Compatibility
+    Operating System Compatibility
 - **Windows**: Windows 10 or later
 - **Linux**: Ubuntu 16.04 LTS or later
 
