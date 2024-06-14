@@ -1,3 +1,1 @@
 Model,Loss,Aiming,Coverage,Accuracy,Absolute_True,Absolute_False,RunTime,Test_Time
-model_select+TextCNN,BinaryDiceLoss,0.742,0.709,0.691,0.632,0.033,2.486,2024-06-13 01:24:24
-model_select+TextCNN,BinaryDiceLoss,0.744,0.717,0.696,0.637,0.034,150.704,2024-06-13 01:27:05
