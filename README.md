@@ -21,11 +21,14 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 | `result`        | results preserved during training.                          |
 | `saved_models`        | models preserved during training.                          |
 | `train_test`        | the main file of PSCFA predictor                         |
-#  Installation
+# Installation
+
 - **Requirements**
-  Operating System Compatibility
+
+Operating System Compatibility
 - **Windows**: Windows 10 or later
 - **Linux**: Ubuntu 16.04 LTS or later
+
 
 Python Environment  
 Ensure your Python environment is compatible with the specified library versions:
