@@ -23,25 +23,11 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 | `train_test`        | the main file of PSCFA predictor                         |
 # Installation
 - **Requirements**
-  OS:
-  - **Windows**: Windows 10 or later
-  - **Linux**: Ubuntu 16.04 LTS or later
-
-Python Environment:
-
-  Ensure your Python environment is compatible with the specified library versions:
-  - `Python= 3.8.17`
-  - `pytorch=1.13.1`
-  - `cuda=11.7`
-  - `numpy=1.24.3`
-  - `pandas=2.0.3`
-
 
     OS:
   - **Windows**: Windows 10 or later
-  - **Linux**: Ubuntu 16.04 LTS or later  
-    Python Environment
-  
+  - **Linux**: Ubuntu 16.04 LTS or later
+  Python Environment
     Ensure your Python environment is compatible with the specified library versions:
   - `Python= 3.8.17`
   - `pytorch=1.13.1`
