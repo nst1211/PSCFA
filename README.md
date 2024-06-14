@@ -26,7 +26,8 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 
     OS:  
      - **Windows**: Windows 10 or later  
-     - **Linux**: Ubuntu 16.04 LTS or later  
+     - **Linux**: Ubuntu 16.04 LTS or later
+
     Python Environment：    
     Ensure your Python environment is compatible with the specified library versions:  
        - `Python= 3.8.17`
