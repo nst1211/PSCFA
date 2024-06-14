@@ -23,7 +23,7 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 | `train_test`        | the main file of PSCFA predictor                         |
 #  Installation
 - **Requirements**
-- **OS:**
+- OS:
   - **Windows:** Windows 10 or later
   - **Linux:** Ubuntu 16.04 LTS or later
   - Our code runs in the following corresponding versions of the python library, please make sure your environment is compatible with our version:
