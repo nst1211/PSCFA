@@ -22,10 +22,9 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 | `saved_models`        | models preserved during training.                          |
 | `train_test`        | the main file of PSCFA predictor                         |
 # Installation
-
 - **Requirements**
 
-OS:  
+    OS:  
 - **Windows**: Windows 10 or later
 - **Linux**: Ubuntu 16.04 LTS or later
 
