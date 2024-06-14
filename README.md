@@ -30,11 +30,11 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 
     Python Environment：    
     Ensure your Python environment is compatible with the specified library versions:  
-       - `Python= 3.8.17`
-       - `pytorch=1.13.1`
-       - `cuda=11.7`
-       - `numpy=1.24.3`
-       - `pandas=2.0.3`
+    - `Python= 3.8.17`
+    - `pytorch=1.13.1`
+    - `cuda=11.7`
+    - `numpy=1.24.3`
+    - `pandas=2.0.3`
 
 **Download PSCFA to your computer:**
    ```bash
