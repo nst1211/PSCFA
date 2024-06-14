@@ -25,21 +25,21 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 
 - **Requirements**
 
-    Operating System Compatibility
-- **Windows**: Windows 10 or later
-- **Linux**: Ubuntu 16.04 LTS or later
+    OS：
+       - **Windows**: Windows 10 or later
+       - **Linux**: Ubuntu 16.04 LTS or later
 
 
-Python Environment  
-Ensure your Python environment is compatible with the specified library versions:
+    Python Environment
+  
+    Ensure your Python environment is compatible with the specified library versions:
   - `Python= 3.8.17`
   - `pytorch=1.13.1`
   - `cuda=11.7`
   - `numpy=1.24.3`
   - `pandas=2.0.3`
 
-### Steps
-1. **Download ETFC to your computer:**
+**Download PSCFA to your computer:**
    ```bash
    git clone https://github.com/nst1211/PSCFA.git
 #  Training and test PSCFA model  
