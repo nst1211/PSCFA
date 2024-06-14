@@ -35,8 +35,7 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
     - `cuda=11.7`
     - `numpy=1.24.3`
     - `pandas=2.0.3`
-
-**Download PSCFA to your computer:**
+- **Download `PSCFA` to your computer:**
    ```bash
    git clone https://github.com/nst1211/PSCFA.git
 #  Training and test PSCFA model  
