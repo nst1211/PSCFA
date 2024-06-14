@@ -39,9 +39,10 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
    ```bash
    cd "./PSCFA"
    git clone https://github.com/nst1211/PSCFA.git
+   ```
 #  Training and test PSCFA model  
-```bash
-python pep_main.py
-
+   ```bash
+   python pep_main.py
+```
 #  Contact
 Please feel free to contact us if you need any help.
