@@ -32,6 +32,20 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
   - `cuda=11.7`
   - `numpy=1.24.3`
   - `pandas=2.0.3`
+# Project Requirements
+
+## Operating System Compatibility
+- **Windows**: Windows 10 or later
+- **Linux**: Ubuntu 16.04 LTS or later
+
+## Python Environment
+Ensure your Python environment is compatible with the specified library versions:
+- **Python**: 3.8.17
+- **PyTorch**: 1.13.1
+- **CUDA**: 11.7
+- **NumPy**: 1.24.3
+- **Pandas**: 2.0.3
+
 ### Steps
 1. **Download ETFC to your computer:**
    ```bash
