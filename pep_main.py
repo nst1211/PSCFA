@@ -15,7 +15,7 @@ def get_config():
                        help='Number of peptide functions')
     parse.add_argument('-batch_size', type=int, default=64*4,
                        help='Batch size')
-    parse.add_argument('-epochs', type=int, default=2) #230
+    parse.add_argument('-epochs', type=int, default=250) #230
     parse.add_argument('-learning_rate', type=float, default=0.001)
     parse.add_argument('-threshold', type=float, default=0.7)
 
