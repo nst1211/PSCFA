@@ -4,7 +4,6 @@ import torch
 from sklearn.model_selection import KFold
 from torch.utils.data import DataLoader, TensorDataset
 
-
 torch.manual_seed(20230226)  # 设置CPU的随机种子
 torch.cuda.manual_seed(20230226)  # 设置GPU的随机种子
 np.random.seed(20231219)
