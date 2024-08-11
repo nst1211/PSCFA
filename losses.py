@@ -8,7 +8,7 @@ torch.manual_seed(20230226)  # 设置CPU的随机种子
 torch.cuda.manual_seed(20230226)  # 设置GPU的随机种子
 
 
-
+#定义损失
 class BinaryDiceLoss(nn.Module):
     """ Dice loss """
     def __init__(self, smooth=1, p=2, reduction='mean'):
