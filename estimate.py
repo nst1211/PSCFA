@@ -16,18 +16,18 @@ def Aiming(y_hat, y):
     n, m = y_hat.shape  # n表示肽的数量， m表示肽的功能数量
 
     score_k = 0
-    for v in range(n):
+    for v in range(n): # 遍历每个样本
         union = 0
         intersection = 0
-        for h in range(m):
-            if y_hat[v, h] == 1 or y[v, h] == 1:  # L ∪ L*
+        for h in range(m): # 遍历每个样本的功能标签
+            if y_hat[v, h] == 1 or y[v, h] == 1:  # L ∪ L*  计算并集
                 union += 1
-            if y_hat[v, h] == 1 and y[v, h] == 1:  # L ∩ L*
+            if y_hat[v, h] == 1 and y[v, h] == 1:  # L ∩ L* ，计算交集
                 intersection += 1
         if intersection == 0:
             continue
-        score_k += intersection / sum(y_hat[v])
-    return score_k / n
+        score_k += intersection / sum(y_hat[v]) # 累计
+    return score_k / n #取平均
 
 
 def Coverage(y_hat, y):
@@ -37,13 +37,13 @@ def Coverage(y_hat, y):
     real labels that are covered by the hits of prediction.
     """
 
-    n, m = y_hat.shape
+    n, m = y_hat.shape # n表示样本的数量，m表示每个样本的功能数量（标签数量）
 
-    score_k = 0
-    for v in range(n):
+    score_k = 0 # 初始化
+    for v in range(n): # 遍历每个样本
         union = 0
         intersection = 0
-        for h in range(m):
+        for h in range(m): # 遍历每个样本的功能标签
             if y_hat[v, h] == 1 or y[v, h] == 1:
                 union += 1
             if y_hat[v, h] == 1 and y[v, h] == 1:
