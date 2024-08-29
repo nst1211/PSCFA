@@ -181,4 +181,94 @@ def TrainAndTest(args):
             device = 'cuda'
             model.load_state_dict(torch.load(args.check_pt_model_path, map_location=device))  # 加载模型状态字典
             # 在整个测试集上评估模型
-            model_predictions, true_labels = predict(model,
+            model_predictions, true_labels = predict(model,, test_dataset, device='cuda')  # 模型预测
+        else:
+            '--------------------------------------------Collecting特征提取-------------------------------------------------'
+            device = 'cuda'
+            model.load_state_dict(torch.load(args.check_pt_model_path, map_location=device))  # 模型加载
+            logger.info('The augmentation of feaature is starting.... ')
+            logger.info('step1:Collecting')
+            start_time = time.time()
+            feature_dict = collector.collect(model, train_dataset, args)
+            logger.info(f'Collected Feature Dictionary Path: {args.feature_dict_path}')
+            logger.info('Time for Collecting: %.1f s' % time_since(start_time))
+            prototype_dict = collector.get_prototype(feature_dict)  # 获取原型
+            head_list, tail_list = collector.get_head(feature_dict, args)  # 获取头部样本
+            '--------------------------------------VAE构建模型，训练以及加载--------------------------------------------------'
+            vae_model = transfer_model.FeatsVAE(args)
+            vae_model = vae_model.to(device='cuda')
+            vae_optimizer = Adam(params=filter(lambda p: p.requires_grad, vae_model.parameters()),
+                                 lr=args.vae_learning_rate)
+            logger.info('Get VAE Datset')
+            start_time = time.time()
+            train_vae_loader, valid_vae_loader = transfer_data.get_dataset(feature_dict, head_list,
+                                                                           prototype_dict, args)
+            logger.info('VAE training')
+            transfer_train.train(vae_model, vae_optimizer, train_vae_loader, valid_vae_loader,
+                                 prototype_dict, args)
+            logger.info(f'Best VAE Model Path: {args.check_pt_vae_model_path}' + '.pth')
+            ' ------------------------------------Augmentation数据增强------------------------------------------------------'
+            logger.info('step2:Augmentation')
+            start_time = time.time()
+            device = 'cuda'
+            logger.info('获取微调数据集')
+            vae_model.load_state_dict(torch.load(args.check_pt_vae_model_path, map_location=device))
+            calibration_loader = generator.generate(vae_model, tail_list, prototype_dict, feature_dict,
+                                                    args)  # 训练数据加载器
+            logger.info('Time for Augmentation: %.1f s' % time_since(start_time))
+
+            '--------------------------------------Calibration模型微调-------------------------------------------------------'
+            new_model = Classifier(args.filter_size, args.filter_num, args.output_size)
+            logger.info('step3:Calibration')
+            start_time = time.time()
+            new_optimizer = torch.optim.Adam(new_model.parameters(), lr=args.calibration_learning_rate)  # 优化器
+            calibration.calibrate(model, new_model, new_optimizer, train_dataset, calibration_loader, args)
+            logger.info('Time for Calibration: %.1f s' % time_since(start_time))
+            logger.info(f'Best Model Path: {args.check_pt_new_model_path}')
+            logger.info('Predicting with augmentation')
+            device = 'cuda'
+            model.load_state_dict(torch.load(args.check_pt_model_path, map_location=device))
+            new_model.load_state_dict(torch.load(args.check_pt_new_model_path, map_location=device))
+            model_predictions, true_labels, representation = calibration.test(model, new_model, test_dataset, args)
+
+
+
+        test_score = estimate.evaluate(model_predictions, true_labels, threshold=args.threshold)  # 模型评估
+        # 保存模型泛化性能
+        test_end = time.time()
+        save_results(title_task, loss_name, train_start, test_end, test_score, title1, file_path)
+        # 打印评估结果
+        run_time = time.time()
+        m, s = spent_time(start_time, run_time)  # 运行时间
+        logger.info(f"{args.task}, {model_name}'s runtime:{m}m{s}s")
+        logger.info("测试集：")
+        logger.info(f'aiming: {test_score[0]:.3f}')
+        logger.info(f'coverage: {test_score[1]:.3f}')
+        logger.info(f'accuracy: {test_score[2]:.3f}')
+        logger.info(f'absolute_true: {test_score[3]:.3f}')
+        logger.info(f'absolute_false: {test_score[4]:.3f}\n')
+
+
+
+def predict(model, data, device="cuda"):
+    # 模型预测
+    model.to(device)
+    model.eval()  # 进入评估模式
+    predictions = []
+    labels = []
+    features=[]
+    with torch.no_grad():  # 取消梯度反向传播
+        for x, l, y in data:
+            x = x.to(device)
+            l = l.to(device)
+            y = y.to(device)
+            representation=model.extractor(x)
+            score=model.clf(representation)
+            label = torch.sigmoid(score)  # 将模型预测值映射至0-1之间
+            predictions.extend(label.tolist())
+            labels.extend(y.tolist())
+            features.extend(representation.cpu().numpy())  # 保存特征表示，需要将其转移到 CPU 上并转换为 NumPy 数组
+    return np.array(predictions), np.array(labels)
+
+
+
