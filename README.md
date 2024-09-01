@@ -48,7 +48,7 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
    python pep_main.py --pretrained=False --FA=False
    ```
 2.Classifier learning stage:
- ```bash
+   ```bash
    python pep_main.py --pretrained=True --FA=True
    ```
 
