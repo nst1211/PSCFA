@@ -41,8 +41,17 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
    ```
 ##  Training and test PSCFA model  
    ```bash
-   cd "./PSCFA"
-   python pep_main.py
-```
+   cd PSCFA-main
+   ```
+1.Feature learning stage:
+   ```bash
+   python pep_main.py --pretrained=False --FA=False
+   ```
+2.Classifier learning stage:
+ ```bash
+   python pep_main.py --pretrained=True --FA=True
+   ```
+
+
 ##  Contact
 Please feel free to contact us if you need any help.
