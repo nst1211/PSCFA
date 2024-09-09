@@ -20,8 +20,8 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 | `dataset`       | data                                                                   |
 | `result`        | the results preserved during training.                          |
 | `saved_models`        | models preserved during training.                          |
-| `train_test`        | the main file of PSCFA predictor                         |
-| `predictor`        | the prediction of peptide sequences and output of functional labels by the PSCFA model.                         |
+| `train_test.py`        | the main file of PSCFA predictor                         |
+| `predictor.py`        | the prediction of peptide sequences and output of functional labels by the PSCFA model.                         |
 ## Installation
 - **Requirements**
 
@@ -55,7 +55,7 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
    python pep_main.py --pretrained=True --FA=True
    ```
 ##  Prediction
-After getting the trained model, we can use it to recognize new peptide sequences. First make sure you have prepared a FASTA file (test.fasta) containing the peptide sequence, run predictor.py,the script will read and encode the sequence, then load the pre-trained PSCFA model to predict the function of the sequence. The prediction results will be saved to the specified output folder.
+After getting the trained PSCFA model, we can use it to recognize new peptide sequences. Firstly, you should to make sure you have prepared a FASTA file (test.fasta) containing the peptide sequences. Then, you can run the predictor.py and the script will read and encode the sequences. After that, the pre-trained PSCFA model is load to predict the function of the peptide sequences. The prediction results will be saved to the specified output folder.
 
 
 ##  Contact
