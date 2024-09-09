@@ -15,10 +15,10 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 |-----------------|------------------------------------------------------------------------|
 | `pep_main.py`       |  stores configuration and parameter settings for the PSCFA model. |
 | `train.py`      | train model                                                            |
-| `models.py`      | model construction                                                     |
-| `evaluation.py` | evaluation metrics (for evaluating prediction results)                 |
+| `models.py`      | the construction of the PSCFA model.                                                 |
+| `evaluation.py` | the evaluation metrics (for evaluating prediction results)                 |
 | `dataset`       | data                                                                   |
-| `result`        | results preserved during training.                          |
+| `result`        | the results preserved during training.                          |
 | `saved_models`        | models preserved during training.                          |
 | `train_test`        | the main file of PSCFA predictor                         |
 | `predictor`        | the prediction of peptide sequences and output of functional labels by the PSCFA model.                         |
