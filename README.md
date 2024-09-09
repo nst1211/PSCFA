@@ -21,6 +21,7 @@ The framework of the PSCFA method for MFTP prediction is described as follows:
 | `result`        | results preserved during training.                          |
 | `saved_models`        | models preserved during training.                          |
 | `train_test`        | the main file of PSCFA predictor                         |
+| `predictor`        | the prediction of peptide sequences and output of functional labels by the PSCFA model.                         |
 ## Installation
 - **Requirements**
 
